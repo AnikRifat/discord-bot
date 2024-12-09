@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Services\DiscordService;
+use Illuminate\Support\Facades\Log;
 
 class DiscordBotController extends Controller
 {
@@ -102,6 +103,9 @@ class DiscordBotController extends Controller
     public function unSubscribed(Request $request)
     {
         $data  = $request->all();
+
+        Log::info('web-hook:', $data);
+
         $discord_id = null;
         $meta_data = collect($data['meta_data'])->where('key', 'discord_id')->first()??null;
 
