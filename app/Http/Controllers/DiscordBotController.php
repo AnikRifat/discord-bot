@@ -103,7 +103,9 @@ class DiscordBotController extends Controller
     public function unSubscribed(Request $request)
     {
         $data  = $request->all();
-
+if(isset($data['webhook_id'])){
+    return true;
+}
         Log::info('web-hook:', $data);
 
         $discord_id = null;
