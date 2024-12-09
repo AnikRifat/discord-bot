@@ -15,4 +15,4 @@ Route::post('remove-role', [DiscordBotController::class, 'removeRole']);
 Route::get('/guilds/channels', [DiscordBotController::class, 'getChannels']);
 Route::get('/guilds/users', [DiscordBotController::class, 'getUsers']);
 Route::post('/subscribed', [DiscordBotController::class, 'subscribed']);
-Route::get('/check-subscription', [DiscordBotController::class, 'unSubscribed']);
+Route::any('/check-subscription', [DiscordBotController::class, 'unSubscribed']);
